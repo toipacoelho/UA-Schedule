@@ -19,3 +19,5 @@ def process(url):
         print(day.text)
         print(day.get('colspan'))
     return 0
+
+
