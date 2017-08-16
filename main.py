@@ -16,12 +16,12 @@ soup = BeautifulSoup(data, "html.parser")
 
 outer = soup.find("li").find("ul")
 
-for li in outer.find_all("li", recursive=False):
-    print(li.contents[0])
+#for li in outer.find_all("li", recursive=False):
+    #print(li.contents[0])
 
 for li in outer.find_all("li", recursive=False):
     if "TELEMÁTICA" in li.contents[0]:
         print()
         for link in li.contents[1].find_all('a'):
-            print(link.get('href'))
+            print("ANO: " + link.get('href')[11])
             table.process(prefix + link.get('href'))
